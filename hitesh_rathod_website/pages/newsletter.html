@@ -1,0 +1,522 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<!-- utf-8 works for most cases -->
+<meta name="viewport" content="width=device-width">
+<!-- Forcing initial-scale shouldn't be necessary -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- Use the latest (edge) version of IE rendering engine -->
+<title>Newsletters</title>
+<!-- The title tag shows in email notifications, like Android 4.4. -->
+
+<!-- Please use an inliner tool to convert all CSS to inline as inpage or external CSS is removed by email clients -->
+<!-- important in CSS is used to prevent the styles of currently inline CSS from overriding the ones mentioned in media queries when corresponding screen sizes are encountered -->
+
+<!-- CSS Reset -->
+<style type="text/css">
+/* What it does: Remove spaces around the email design added by some email clients. */
+      /* Beware: It can remove the padding / margin and add a background color to the compose a reply window. */
+html, body {
+	margin: 0 !important;
+	padding: 0 !important;
+	height: 100% !important;
+	width: 100% !important;
+}
+/* What it does: Stops email clients resizing small text. */
+* {
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+/* What it does: Forces Outlook.com to display emails full width. */
+.ExternalClass {
+	width: 100%;
+}
+/* What is does: Centers email on Android 4.4 */
+div[style*="margin: 16px 0"] {
+	margin: 0 !important;
+}
+/* What it does: Stops Outlook from adding extra spacing to tables. */
+table, td {
+	mso-table-lspace: 0pt !important;
+	mso-table-rspace: 0pt !important;
+}
+/* What it does: Fixes webkit padding issue. Fix for Yahoo mail table alignment bug. Applies table-layout to the first 2 tables then removes for anything nested deeper. */
+table {
+	border-spacing: 0 !important;
+	border-collapse: collapse !important;
+	table-layout: fixed !important;
+	margin: 0 auto !important;
+}
+table table table {
+	table-layout: auto;
+}
+/* What it does: Uses a better rendering method when resizing images in IE. */
+img {
+	-ms-interpolation-mode: bicubic;
+}
+/* What it does: Overrides styles added when Yahoo's auto-senses a link. */
+.yshortcuts a {
+	border-bottom: none !important;
+}
+/* What it does: Another work-around for iOS meddling in triggered links. */
+a[x-apple-data-detectors] {
+	color: inherit !important;
+}
+</style>
+	
+<link href="../css/newsletter.css" rel="stylesheet" type="text/css">
+
+<!-- Progressive Enhancements -->
+<style type="text/css">
+/* What it does: Hover styles for buttons */
+.button-td, .button-a {
+	transition: all 100ms ease-in;
+}
+.button-td:hover, .button-a:hover {
+	background: #555555 !important;
+	border-color: #555555 !important;
+}
+
+/* Media Queries */
+@media screen and (max-width: 480px) {
+/* What it does: Forces elements to resize to the full width of their container. Useful for resizing images beyond their max-width. */
+.fluid, .fluid-centered {
+	width: 100% !important;
+	max-width: 100% !important;
+	height: auto !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+/* And center justify these ones. */
+.fluid-centered {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+/* What it does: Forces table cells into full-width rows. */
+.stack-column, .stack-column-center {
+	display: block !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	direction: ltr !important;
+}
+/* And center justify these ones. */
+.stack-column-center {
+	text-align: center !important;
+}
+/* What it does: Generic utility class for centering. Useful for images, buttons, and nested tables. */
+.center-on-narrow {
+	text-align: center !important;
+	display: block !important;
+	margin-left: auto !important;
+	margin-right: auto !important;
+	float: none !important;
+
+}
+table.center-on-narrow {
+	display: inline-block !important;
+}
+}
+</style>
+<link href="../css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+a:link {
+    color: #fec156;
+}
+a:visited {
+    color: #FFFFFF;
+}
+a:hover {
+    color: #fdb434;
+}
+a:active {
+    color: #ACBFC4;
+}
+</style>
+<link href="../css/aboutstyles.css" rel="stylesheet" type="text/css">
+</head>
+<body width="100%" bgcolor="#FFFFFF" style="margin: 0;" yahoo="yahoo">
+<nav class="navbar navbar-expand-lg navbar-dark background" id="background">
+  <div class="container"> <a class="navbar-brand" href="index.html"><img src="../images/logo.png" width="80" height="" alt=""/></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbar">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item"> <a class="nav-link" href="index.html">Home</a></li>
+        <li class="nav-item"> <a class="nav-link" href="about.html">About</a></li>
+        <li class="nav-item dropdown"> <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Properties</a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown"> <a class="dropdown-item" id = "rent" href="for_rent.html">For Rent</a> <a class="dropdown-item" id = "sale" href="for_sale.html">For Sale</a> <a class="dropdown-item" id = "past" href="past_listings.html">Past Listings</a></div>
+        </li>
+        <li class="nav-item"> <a class="nav-link" href="newsletter.html">Newsletters</a></li>
+        <li class="nav-item"> <a class="nav-link" href="facebook.html">Facebook</a></li>
+        <li class="nav-item"> <a class="nav-link" href="contact.html">Contact</a></li>
+        <li class="nav-item"> <a class="nav-link" href="testimonials.html">Testimonials</a></li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+      </form>
+    </div>
+  </div>
+</nav>
+<table cellpadding="0" cellspacing="0" border="0" height="100%" width="100%" bgcolor="#8498A6" style="border-collapse:collapse;">
+  <tr>
+    <td><center style="width: 100%;">
+        
+        <!-- Visually Hidden Preheader Text : BEGIN -->
+<div style="display:none;font-size:1px;line-height:1px;max-height:0px;max-width:0px;opacity:0;overflow:hidden;mso-hide:all;font-family: sans-serif;"> (Optional) This text will appear in the inbox preview, but not the email body. </div>
+        <!-- Visually Hidden Preheader Text : END -->
+        
+        <div style="max-width: 680px;"> 
+          <!--[if (gte mso 9)|(IE)]>
+            <table cellspacing="0" cellpadding="0" border="0" width="680" align="center">
+            <tr>
+            <td>
+            <![endif]--> 
+          
+          <!-- Email Header : BEGIN -->
+          <table cellspacing="0" cellpadding="0" border="0" align="center" width="100%" style="max-width: 680px;">
+            <tr>
+            
+            </tr>
+          </table>
+          <!-- Email Header : END --> 
+          
+          <!-- Email Body : BEGIN -->
+          <table cellspacing="0" cellpadding="0" border="0" align="center" bgcolor="#B3BEC1" width="100%" style="max-width: 680px;">
+            
+            <!-- Hero Image, Flush : BEGIN -->
+            <tr>
+              <td class="full-width-image" align="center"><img src="../images/newsletter/newsletter.jpg" width="680" alt="alt_text" border="0"  style="width: 100%; max-width: 680px; height: auto;"></td>
+            </tr>
+            <!-- Hero Image, Flush : END --> 
+            
+            <!-- 1 Column Text : BEGIN -->
+            <tr>
+              <td><table cellspacing="0" cellpadding="0" border="0" width="100%">
+                  <tr> </tr>
+                </table></td>
+            </tr>
+            <!-- 1 Column Text : BEGIN --> 
+            
+            <!-- Background Image with Text : BEGIN -->
+           <!--[if gte mso 9]>
+                        <v:rect xmlns:v="urn:schemas-microsoft-com:vml" fill="true" stroke="false" style="width:680px;height:175px; background-position: center center !important;">
+                        <v:fill type="tile" src="assets/Hybrid/Image_680x230.png" color="#222222" />
+                        <v:textbox inset="0,0,0,0">
+                        <![endif]-->
+    
+                  <!--[if mso]>
+                            <table border="0" cellspacing="0" cellpadding="0" align="center" width="500">
+                            <tr>
+                            <td align="center" valign="top" width="500">
+                            <![endif]-->
+                  
+					
+					
+                  <!--[if (gte mso 9)|(IE)]>
+                            </td>
+                            </tr>
+                            </table>
+                            <![endif]--> 
+               
+                <!--[if gte mso 9]>
+                        </v:textbox>
+                        </v:rect>
+                        <![endif]--
+            </tr>
+            <!-- Background Image with Text : END --> 
+            
+            <!-- Two Even Columns : BEGIN -->
+            <tr>
+              <td bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%"><!--[if mso]>
+                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                        <tr>
+                        <td align="center" valign="top" width="660">
+                        <![endif]-->
+               
+                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
+                  <tr> 
+					 <div id= "news"><img src="../images/newsletter/maynews.png" width="660px" ></div> 
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
+                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                                    <tr>
+                                    <td align="left" valign="top" width="330">
+                                    <![endif]-->
+                      
+                    <div style="display:inline-block; max-width:85%; margin: 0 -2px; min-width:200px; vertical-align:top; width:100%;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td style="padding: ;"><table cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;">
+                                <tr>
+                                <td width="660px">  <script type="text/javascript" src="https://content.jwplatform.com/players/UX9TmLNo-PPKdeADu.js" id= "news"></script></td>
+                                </tr>
+                                <tr>
+                               
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table>
+                      </div>
+                      
+						 
+                      <div style="display:inline-block; max-width:85%; margin: 0 -2px; min-width:200px; vertical-align:top; width:100%;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td style="padding: ;"><table cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;">
+                                
+                                <tr>
+                                  <td style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; 20px; color: #555555; padding-top: 10px;" class="stack-column-center"> <div id="text"> After two long years stuck inside, are you looking to freshen things up at home? If so, we've got some inspiration: Here are the decor looks you're guaranteed to see everywhere in 2022. </div>
+
+
+
+ </td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table>
+                      </div>
+						<br>
+						<br>
+						   <div style="display:inline-block; max-width:85%; margin: 0 -2px; min-width:200px; vertical-align:top; width:100%;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td style="padding: ;"><table cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;">
+                                <tr>
+                                  <td width="660px" id="space"><script type="text/javascript" src="https://content.jwplatform.com/players/tt4XMIuk-PPKdeADu.js"></script></td>
+                                </tr>
+                                <tr>
+                               
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table>
+                      </div>
+                      
+						 
+                      <div style="display:inline-block; max-width:85%; margin: 0 -2px; min-width:200px; vertical-align:top; width:100%;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td style="padding: ;"><table cellspacing="0" cellpadding="0" border="0" width="100%" style="font-size: 14px;">
+                                
+                                <tr>
+                                  <td style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; 20px; color: #555555; padding-top: 10px;" class="stack-column-center"> <div id="text">Saving up for a down payment? We crunch the numbers to uncover how much you'll have to bank to buy a half-million dollar home.</div>
+
+
+
+ </td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table>
+                      </div>
+                      <!--[if mso]>
+                                    </td>
+                                    <td align="left" valign="top" width="330">
+                                    <![endif]-->
+                    
+                      
+                      <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]--></td>
+                  </tr>
+                </table>
+                
+                <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]--></td>
+            </tr>
+            <!-- Two Even Columns : END --> 
+            
+            <!-- Three Even Columns : BEGIN -->
+            <tr>
+              <td bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
+                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                        <tr>
+                        <td align="center" valign="top" width="660">
+                        <![endif]-->
+                
+                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
+                  <tr> </tr>
+                </table>
+                
+                <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]--></td>
+            </tr>
+            <!-- Three Even Columns : END --> 
+            
+            <!-- Thumbnail Left, Text Right : BEGIN -->
+            <tr>
+              <td dir="ltr" bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
+                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                        <tr>
+                        <td align="center" valign="top" width="660">
+                        <![endif]-->
+                
+                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
+                  <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
+                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                                    <tr>
+                                    <td align="left" valign="top" width="220">
+                                    <![endif]-->
+                      
+                      <div style="display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td dir="ltr" style="padding: 0 10px 10px 10px;"><img src="../images/newsletter/graphicone.jpeg" width="300px" alt="" style="border: 0;width: 200%;max-width: 300px;height: auto;" class="center-on-narrow"></td>
+                          </tr>
+                        </table>
+                      </div>
+                      
+                      <!--[if mso]>
+                                    </td>
+                                    <td align="left" valign="top" width="440">
+                                    <![endif]-->
+                      
+                      <div style="display:inline-block; margin: 0 -2px; max-width:67.88%; min-width:320px; vertical-align:top;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td dir="ltr" style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #335261; padding: 10px 130px 0px ; text-align: left;" class="center-on-narrow"><strong style="color:#335261;">April 2022 Market Overview</strong> <br>
+                              <br>
+                              It is important to keep up with the market in your area. The market can tell you whether it is the appropriate time to buy and sell a house.<br>
+                              <br>
+                              
+                              <!-- Button : Begin -->
+                              
+                              <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+                                <tr>
+                                  <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td"><a href="for_sale.html" style="background: #222222; border: 15px solid #222222; padding: 0 10px;color: #ffffff; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a"> 
+                                    <!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]-->Properties<!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]--> 
+                                    </a></td>
+                                </tr>
+                              </table>
+                              
+                              <!-- Button : END --></td>
+                          </tr>
+                        </table>
+                      </div>
+                      
+                      <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]--></td>
+                  </tr>
+                </table>
+                
+                <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]--></td>
+            </tr>
+            <!-- Thumbnail Left, Text Right : END --> 
+            
+            <!-- Thumbnail Right, Text Left : BEGIN -->
+            <tr>
+              <td dir="rtl" bgcolor="#ffffff" align="center" height="100%" valign="top" width="100%" style="padding: 10px 0;"><!--[if mso]>
+                        <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                        <tr>
+                        <td align="center" valign="top" width="660">
+                        <![endif]-->
+                
+                <table border="0" cellpadding="0" cellspacing="0" align="center" width="100%" style="max-width:660px;">
+                  <tr>
+                    <td align="center" valign="top" style="font-size:0; padding: 10px 0;"><!--[if mso]>
+                                    <table border="0" cellspacing="0" cellpadding="0" align="center" width="660">
+                                    <tr>
+                                    <td align="left" valign="top" width="220">
+                                    <![endif]-->
+                      
+                      <div style="display:inline-block; margin: 0 -2px; max-width:33.33%; min-width:160px; vertical-align:top; width:100%;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td dir="ltr" style="padding: 0 10px 10px 10px;"><img src="../images/logowcircle.png" width="200" alt="" style="border: 0;width: 100%;max-width: 200px;height: auto;" class="center-on-narrow"></td>
+                          </tr>
+                        </table>
+                      </div>
+                      
+                      <!--[if mso]>
+                                    </td>
+                                    <td align="left" valign="top" width="440">
+                                    <![endif]-->
+                      
+                      <div style="display:inline-block; margin: 0 -2px; max-width:66.66%; min-width:320px; vertical-align:top;" class="stack-column">
+                        <table cellspacing="0" cellpadding="0" border="0" width="100%">
+                          <tr>
+                            <td dir="ltr" style="font-family: sans-serif; font-size: 15px; mso-height-rule: exactly; line-height: 20px; color: #335261; padding: 10px 10px 0; text-align: left;" class="center-on-narrow"><strong style="color:#335261;">Note from the realtor:</strong> <br>
+                              <br>
+                              It's my intention to continue building lifelong relationships one client at a time, while remaining your personal real estate consultant for life. If you know of a friend, coworker or family member who has a real estate need, please contact me. Your personal referrals are the greatest compliment I can receive.&nbsp; <br>
+                              
+                              <!-- Button : Begin -->
+                              <br>
+                              <table cellspacing="0" cellpadding="0" border="0" class="center-on-narrow" style="float:left;">
+                                <tr>
+                                  <td style="border-radius: 3px; background: #222222; text-align: center;" class="button-td"><a href="index.html" style="background: #222222; border: 15px solid #222222; padding: 0 10px;color: #ffffff; font-family: sans-serif; font-size: 13px; line-height: 1.1; text-align: center; text-decoration: none; display: block; border-radius: 3px; font-weight: bold;" class="button-a"> 
+                                    <!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]-->Home<!--[if mso]>&nbsp;&nbsp;&nbsp;&nbsp;<![endif]--> 
+                                    </a></td>
+                                </tr>
+                              </table>
+                              
+                              <!-- Button : END --></td>
+                          </tr>
+                        </table>
+                      </div>
+                      
+                      <!--[if mso]>
+                                    </td>
+                                    </tr>
+                                    </table>
+                                    <![endif]--></td>
+                  </tr>
+                </table>
+                
+                <!--[if mso]>
+                        </td>
+                        </tr>
+                        </table>
+                        <![endif]--></td>
+            </tr>
+            <!-- Thumbnail Right, Text Left : END -->
+            
+          </table>
+          <!-- Email Body : END --> 
+          
+          <!-- Email Footer : BEGIN -->
+         
+          <!-- Email Footer : END --> 
+          
+          <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]--> 
+			
+<footer id="footer">
+  <address>
+    <strong style="font-size: 16px;">Hitesh Rathod, Realtor</strong>
+	  
+    <p style="font-size: 16px;">Broker/Realtor in North Carolina and South Carolina</p>
+
+	  <p style="font-size: 16px;">(704)-490-8255</p>
+  </address>
+  <address>
+    <strong style="font-size: 16px;">Hitesh Rathod</strong>
+    <p><a href="mailto:#" color= "#FFBE39" style="font-size: 16px; line-height: -10px;">rhitesh@yahoo.com</a></p>
+  </address>
+</footer>
+        
+</body>
+	
+	<script src="../js/jquery-3.4.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap-4.4.1.js"></script>
+	
+
+</html>
